@@ -1,0 +1,9 @@
+<%= form_for (@new_song) do |s| %>
+    
+    <p><%= s.text_field :s.name, placeholder: "Name" %></p>
+    <p><%= s.text_field :s.artists, placeholder: "Artist"%></p>
+
+    
+    <%= s.submit "Create Song" %>
+
+<% end %>

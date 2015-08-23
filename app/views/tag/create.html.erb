@@ -1,0 +1,7 @@
+<h4>Let's create a new tag: </h4>
+<%= form_for (@tag) do |t| %>
+    <%= t.text_field :name, placeholder: "Name" %>
+    <br>
+    <%= t.submit "Enter Track"%>
+
+<% end %>

@@ -1,0 +1,4 @@
+<h2>All the tags for <strong><%= @song.name %></strong> by <%= @song.artist %>:</h2>
+<% @tags.each do |t| %>
+    <%= link_to t.name, tag_path(t) %>
+<% end %>    
