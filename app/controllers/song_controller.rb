@@ -13,18 +13,22 @@ class SongController < ApplicationController
     @song_artist = params[:artist]
   end
 
+  def new
+    @song = Song.new
+  end
+
   def create
-    @song = Song.new(params[:id])
+    @song = Song.new(song_params)
     if @song.save
       redirect_to root_path
     else
-      render '/song/create'
+      render 'song/new'
     end
   end
 
   private
-
-  def song_params
+    def song_params
       params.require(:song).permit(:name, :artist)
-  end
+    end
+
 end

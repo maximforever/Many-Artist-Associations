@@ -1,6 +1,6 @@
 <h2>All the tags:</h2>
 
 <% @tags.each do |t| %>
-    <p><em><%= link_to t.name, tags_path(t) %></em></p>
+    <p><em><%= link_to t.name, tag_path(t) %></em></p>
 <% end %>
 
