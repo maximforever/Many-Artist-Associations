@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
   root 'song#index'
-
   get '/tags' => 'tag#index'
-  get '/song/create' => 'song#create', as: :song_create
+  get  '/song/create' => 'song#create'
   post '/song/create' => 'song#create'
+  post '/songs/create' => 'song#create', as: :songs
   get '/song/find_by_artist/:artist' => 'song#find_by_artist', as: :artist
-  get '/songs/:id' => 'song#show', as: :song
+  get '/songs/:id' => 'song#show', as: :song_id
   get '/tags/:id' => 'tag#show', as: :tag
   get '/tag/create' => 'tag#create', as: :new_tag
 

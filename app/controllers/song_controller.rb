@@ -14,19 +14,17 @@ class SongController < ApplicationController
   end
 
   def create
-    @new_song = Song.new(song_params)
-    if @new_song.save
+    @song = Song.new(params[:id])
+    if @song.save
       redirect_to root_path
     else
-      render create_song_path
+      render '/song/create'
     end
-
   end
-
 
   private
 
   def song_params
-      params.permit(:name, :artist)
+      params.require(:song).permit(:name, :artist)
   end
 end
