@@ -10,6 +10,12 @@ Rails.application.routes.draw do
   post '/tags' => 'tag#create'
 
 
+  get  '/tagging' => 'tagging#main'
+  get  '/tagging/new' => 'tagging#new'
+  
+  post '/taggings' => 'tagging#create'
+
+
 
 
 

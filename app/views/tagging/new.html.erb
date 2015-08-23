@@ -1,0 +1,15 @@
+<h3>Add SONG ID to TAG ID</h3>
+
+<%= form_for (@tagging) do |t| %>
+    <p><%= t.text_field :song_id, placeholder: "Song ID" %></p>
+    <p><%= t.text_field :tag_id, placeholder: "Tag ID" %></p>
+    <%= t.submit "Submit Tagging" %>
+<% end %>
+
+<% @songs.each do |s| %>
+    <p><%= s.id %>: <strong><%= link_to s.name, song_id_path(s) %></strong> by <%= link_to s.artist, artist_path(s.artist) %></p>
+<% end %>
+
+<% @tags.each do |g| %>
+    <p><%= g.id %>: <%= g.name %></p>
+<% end %>
