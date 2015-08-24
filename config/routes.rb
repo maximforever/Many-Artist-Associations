@@ -4,16 +4,25 @@ Rails.application.routes.draw do
   
   get '/tags' => 'tag#index'
   get  '/song/new' => 'song#new'
+  
   get '/tag/new' => 'tag#new'
+  post '/tags' => 'tag#create'
+  
   post '/song/create' => 'song#index'
   post '/song' => 'song#create'
-  post '/tags' => 'tag#create'
 
+
+
+  get  '/tagging/new' => 'tagging#new'
 
   get  '/tagging' => 'tagging#main'
-  get  '/tagging/new' => 'tagging#new'
-  
   post '/taggings' => 'tagging#create'
+# for some reason, we get TAGGING but post TAGGINGS
+# no clue why.
+
+  
+
+
 
 
 
