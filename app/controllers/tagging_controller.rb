@@ -13,7 +13,7 @@ class TaggingController < ApplicationController
   def create
     @tagging = Tagging.new(tagging_params)
     if @tagging.save
-      redirect_to root_path
+      redirect_to tag_path(@tagging.tag_id)
     else
       render root_path
     end
